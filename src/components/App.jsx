@@ -11,7 +11,7 @@ export class App extends Component {
 
   onChangeGood = itemGood => {
     console.log(itemGood);
-    this.setState({ good: itemGood});
+    this.setState({ good: itemGood });
   };
 
   onChangeNeutral = itemNeutral => {
@@ -19,11 +19,21 @@ export class App extends Component {
     this.setState({ neutral: itemNeutral });
   };
 
-  onChangeBad = (itemBad) => {
-    console.log( itemBad);
+  onChangeBad = itemBad => {
+    console.log(itemBad);
     this.setState({ bad: itemBad });
   };
 
+  countTotalFeedback = totalFeedback => {
+    totalFeedback =
+      this.state.good +
+      this.state.neutral +
+      this.state.bad;
+    return totalFeedback;
+  };
+
+
+  
   render() {
     return (
       <div
@@ -44,6 +54,7 @@ export class App extends Component {
           onChangeGood={this.onChangeGood}
           onChangeNeutural={this.onChangeNeutral}
           onChangeBad={this.onChangeBad}
+          feedback={this.totalFeedback}
         />
       </div>
     );
