@@ -9,8 +9,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  onChange = goodId => {
-    console.log(goodId)
+  onChange = (itemGood, itemNeutral, itemBad) => {
+    console.log(itemGood, itemNeutral, itemBad);
+    this.setState({ good: itemGood, neutral: itemNeutral, bad: itemBad });
   };
 
   render() {
