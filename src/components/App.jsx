@@ -8,6 +8,11 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
+
+  onChange = goodId => {
+    console.log(goodId)
+  };
+
   render() {
     return (
       <div
@@ -20,9 +25,13 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        Home
         <GlobalStyle />
-        <Statistics title="Upload stats" />
+        <Statistics
+          itemGood={this.state.good}
+          itemNeutral={this.state.neutral}
+          itemBad={this.state.bad}
+          onChange={this.onChange}
+        />
       </div>
     );
   }
