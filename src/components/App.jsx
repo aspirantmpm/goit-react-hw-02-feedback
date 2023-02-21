@@ -20,6 +20,7 @@ export class App extends Component {
           color: '#010101',
         }}
       >
+        Home
         <GlobalStyle />
         <Statistics title="Upload stats" />
       </div>
