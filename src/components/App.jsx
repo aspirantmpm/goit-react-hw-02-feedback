@@ -9,9 +9,19 @@ export class App extends Component {
     bad: 0,
   };
 
-  onChange = (itemGood, itemNeutral, itemBad) => {
-    console.log(itemGood, itemNeutral, itemBad);
-    this.setState({ good: itemGood, neutral: itemNeutral, bad: itemBad });
+  onChangeGood = itemGood => {
+    console.log(itemGood);
+    this.setState({ good: itemGood});
+  };
+
+  onChangeNeutral = itemNeutral => {
+    console.log(itemNeutral);
+    this.setState({ neutral: itemNeutral });
+  };
+
+  onChangeBad = (itemBad) => {
+    console.log( itemBad);
+    this.setState({ bad: itemBad });
   };
 
   render() {
@@ -31,7 +41,9 @@ export class App extends Component {
           itemGood={this.state.good}
           itemNeutral={this.state.neutral}
           itemBad={this.state.bad}
-          onChange={this.onChange}
+          onChangeGood={this.onChangeGood}
+          onChangeNeutural={this.onChangeNeutral}
+          onChangeBad={this.onChangeBad}
         />
       </div>
     );
