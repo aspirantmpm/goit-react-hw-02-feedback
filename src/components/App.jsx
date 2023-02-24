@@ -1,4 +1,5 @@
 import { Component } from 'react';
+// import React, { useState } from 'react';
 import { GlobalStyle } from './Globalstyle';
 import { Statistics } from './Statistics';
 
@@ -24,15 +25,21 @@ export class App extends Component {
     this.setState({ bad: itemBad });
   };
 
-  countTotalFeedback = totalFeedback => {
-    totalFeedback =
-      this.state.good +
-      this.state.neutral +
-      this.state.bad;
-    return totalFeedback;
+  countTotalFeedback = () => {
+    let totalFeedback  = this.state.good + this.state.neutral + this.state.bad;
+    console.log(totalFeedback)
+    return totalFeedback;    
   };
 
-
+  countPositiveFeedbackPercentage = () => {
+    let positiveFeedback =
+        Math.round((this.state.good * 100) / this.countTotalFeedback());
+      console.log(positiveFeedback)
+    if (this.state.good !== 0) {
+      return positiveFeedback; 
+    }  else return '0'
+  
+}
   
   render() {
     return (
@@ -54,7 +61,8 @@ export class App extends Component {
           onChangeGood={this.onChangeGood}
           onChangeNeutural={this.onChangeNeutral}
           onChangeBad={this.onChangeBad}
-          feedback={this.totalFeedback}
+          feedback={this.countTotalFeedback}
+          positive={this.countPositiveFeedbackPercentage}
         />
       </div>
     );
