@@ -8,6 +8,6 @@ export const Buttons = styled.div`
 export const Button = styled.button`
   border: 1px solid black;
   border-radius: 10px;
-  /* pointer-events: pointer; */
+  cursor: pointer;
   padding: 10px;
 `;

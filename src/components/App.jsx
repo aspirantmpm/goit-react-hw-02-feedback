@@ -1,7 +1,7 @@
 import { Component } from 'react';
 // import React, { useState } from 'react';
 import { GlobalStyle } from './Globalstyle';
-import { Statistics } from './Statistics';
+import { Section } from './Section';
 
 export class App extends Component {
   state = {
@@ -11,30 +11,30 @@ export class App extends Component {
   };
 
   onChangeGood = itemGood => {
-    console.log(itemGood);
+    // console.log(itemGood);
     this.setState({ good: itemGood });
   };
 
   onChangeNeutral = itemNeutral => {
-    console.log(itemNeutral);
+    // console.log(itemNeutral);
     this.setState({ neutral: itemNeutral });
   };
 
   onChangeBad = itemBad => {
-    console.log(itemBad);
+    // console.log(itemBad);
     this.setState({ bad: itemBad });
   };
 
   countTotalFeedback = () => {
     let totalFeedback  = this.state.good + this.state.neutral + this.state.bad;
-    console.log(totalFeedback)
+    // console.log(totalFeedback)
     return totalFeedback;    
   };
 
   countPositiveFeedbackPercentage = () => {
     let positiveFeedback =
         Math.round((this.state.good * 100) / this.countTotalFeedback());
-      console.log(positiveFeedback)
+      // console.log(positiveFeedback)
     if (this.state.good !== 0) {
       return positiveFeedback; 
     }  else return '0'
@@ -54,7 +54,7 @@ export class App extends Component {
         }}
       >
         <GlobalStyle />
-        <Statistics
+        <Section
           itemGood={this.state.good}
           itemNeutral={this.state.neutral}
           itemBad={this.state.bad}
