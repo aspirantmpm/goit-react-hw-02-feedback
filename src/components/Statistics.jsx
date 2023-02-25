@@ -1,3 +1,5 @@
+import { Notification } from "./Notification";
+
 export const Statistics = ({
   itemGood,
   itemNeutral,
@@ -8,14 +10,23 @@ export const Statistics = ({
   feedback,
   positive,
 }) => {
+  // console.log(feedback());
   return (
+    // console.log({ feedback })
     <div>
       <h2>Statistics</h2>
-      <p> Good: {itemGood} </p>
-      <p> Neutral: {itemNeutral} </p>
-      <p>Bad: {itemBad} </p>
-      <p>Total: {feedback()} </p>
-      <p>Positive feedback: {positive()}% </p>
+      
+      {feedback() === 0 ? 
+        <Notification message="There is no feedback" />
+       : 
+        <div>
+          <p> Good: {itemGood} </p>
+          <p> Neutral: {itemNeutral} </p>
+          <p>Bad: {itemBad} </p>
+          <p>Total: {feedback()} </p>
+          <p>Positive feedback: {positive()}% </p>
+        </div>
+      }
     </div>
   );
 };

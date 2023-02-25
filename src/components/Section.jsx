@@ -1,5 +1,5 @@
 import { FeedbackOptions } from './FeedbackOptions';
-import { Notification } from './Notification';
+// import { Notification } from './Notification';
 import { Statistics } from './Statistics';
 
 export const Section = ({
@@ -25,14 +25,14 @@ export const Section = ({
         itemBad={itemBad}
       />
 
-      <Notification
+      {/* <Notification
         message="There is no feedback"
-        itemGood={itemGood}
-        itemNeutral={itemNeutral}
-        itemBad={itemBad}
-        feedback={feedback}
-        positive={positive}
-      />
+        // itemGood={itemGood}
+        // itemNeutral={itemNeutral}
+        // itemBad={itemBad}
+        // feedback={feedback}
+        // positive={positive}
+      /> */}
 
       <Statistics
         itemGood={itemGood}
