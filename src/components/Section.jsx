@@ -1,6 +1,6 @@
 import { FeedbackOptions } from './FeedbackOptions';
 import { Notification } from './Notification';
-// import { Statistics } from './Statistics';
+import { Statistics } from './Statistics';
 
 export const Section = ({
   itemGood,
@@ -34,13 +34,13 @@ export const Section = ({
         positive={positive}
       />
 
-      {/* <Statistics
+      <Statistics
         itemGood={itemGood}
         itemNeutral={itemNeutral}
         itemBad={itemBad}
         feedback={feedback}
         positive={positive}
-      /> */}
+      />
 
       {/* <h2>Statistics</h2>
       <p>Good: {itemGood}</p>
