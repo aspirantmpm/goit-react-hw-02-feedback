@@ -1,24 +1,20 @@
-import { Notification } from "./Notification";
+import PropTypes from 'prop-types';
+import { Notification } from './Notification';
 
 export const Statistics = ({
   itemGood,
   itemNeutral,
   itemBad,
-  //   onChangeGood,
-  //   onChangeNeutural,
-  //   onChangeBad,
   feedback,
   positive,
 }) => {
-  // console.log(feedback());
   return (
-    // console.log({ feedback })
     <div>
       <h2>Statistics</h2>
-      
-      {feedback() === 0 ? 
+
+      {feedback() === 0 ? (
         <Notification message="There is no feedback" />
-       : 
+      ) : (
         <div>
           <p> Good: {itemGood} </p>
           <p> Neutral: {itemNeutral} </p>
@@ -26,7 +22,15 @@ export const Statistics = ({
           <p>Total: {feedback()} </p>
           <p>Positive feedback: {positive()}% </p>
         </div>
-      }
+      )}
     </div>
   );
+};
+
+Statistics.propTypes = {
+  itemGood: PropTypes.number.isRequired,
+  itemNeutral: PropTypes.number.isRequired,
+  itemBad: PropTypes.number.isRequired,
+  feedback: PropTypes.func.isRequired,
+  positive: PropTypes.func.isRequired,
 };

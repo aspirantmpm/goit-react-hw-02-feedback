@@ -1,5 +1,5 @@
 import { FeedbackOptions } from './FeedbackOptions';
-// import { Notification } from './Notification';
+import PropTypes from 'prop-types';
 import { Statistics } from './Statistics';
 
 export const Section = ({
@@ -25,15 +25,6 @@ export const Section = ({
         itemBad={itemBad}
       />
 
-      {/* <Notification
-        message="There is no feedback"
-        // itemGood={itemGood}
-        // itemNeutral={itemNeutral}
-        // itemBad={itemBad}
-        // feedback={feedback}
-        // positive={positive}
-      /> */}
-
       <Statistics
         itemGood={itemGood}
         itemNeutral={itemNeutral}
@@ -41,13 +32,17 @@ export const Section = ({
         feedback={feedback}
         positive={positive}
       />
-
-      {/* <h2>Statistics</h2>
-      <p>Good: {itemGood}</p>
-      <p>Neutral: {itemNeutral}</p>
-      <p>Bad: {itemBad}</p>
-      <p>Total: {feedback()}</p>
-      <p>Positive feedback: {positive()}%</p> */}
     </div>
   );
+};
+
+Section.propTypes = {
+  itemGood: PropTypes.number.isRequired,
+  itemNeutral: PropTypes.number.isRequired,
+  itemBad: PropTypes.number.isRequired,
+  onChangeGood: PropTypes.func.isRequired,
+  onChangeNeutural: PropTypes.func.isRequired,
+  onChangeBad: PropTypes.func.isRequired,
+  feedback: PropTypes.func.isRequired,
+  positive: PropTypes.func.isRequired,
 };
